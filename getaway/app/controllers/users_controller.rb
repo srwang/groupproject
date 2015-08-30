@@ -1,25 +1,25 @@
 class UsersController < ApplicationController
 
 	def index
-		@restaurant = Restaurant.where(id: params[:location_id])
-		puts "#{@restaurant}"
-		if session[:in_line] == true
+		session[:user_id] = 4
+		@restaurant = Restaurant.where(id: params[:location_id])[0]
+		if !session[:in_line]
 			@visit = Visit.new
+			render :index
 		else
-			@visit = Visit.where(user_id: session[:user_id])
+			redirect_to "/location/#{params[:location_id]}/users/#{session[:user_id]}"
 		end
-		session[:user_id] = 1
 	end
 
 	def create
 		Visit.create(visit_params)
-		redirect_to location_users_path
 		session[:in_line] = true
+		redirect_to "/location/#{params[:location_id]}/users/#{session[:user_id]}"
 	end
 	
 	def show		
-		@restaurant = Restaurant.where(id: params[:location_id])
-		@user = User.where(id: params[:id])
+		@restaurant = Restaurant.where(id: params[:location_id])[0]
+		@visit = Visit.where(user_id: params[:id])[0]
 	end
 
 
