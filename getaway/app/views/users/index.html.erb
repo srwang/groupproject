@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<header>
+		<nav></nav>
+		<h1><%=@restaurant.name%></h1>
+	</header>
+	<div id="ticket-order-display">
+		<h3><a href="">Ticket</a></h3>
+		<h3><a href="">Order</a></h3>
+	</div>
+	<div>
+		<% if session[:in_line] == true %>
+		<div>
+			<h1>Ticket Number</h1>
+			<h1 id="ticket-number-display"><%=@visit%></h1>
+		</div>
+		<% else %>
+			<%= form_for @visit, url: {action: "create"}, method: :post do |f| %>
+			    <%= f.hidden_field :restaurant_id, value: @restaurant.id %>
+			    <%= f.hidden_field :user_id, value: session[:user_id] %>
+			    <%= f.submit 'Get In (stream)Line!' %>
+			<% end %>
+		<% end %>
+	</div>
+</body>
+</html>

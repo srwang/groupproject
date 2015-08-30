@@ -12,6 +12,7 @@ User.create({username: "Felix1234", name: "Felix", password:"1234", account_type
 User.create({username: "Ramen", name:"Sharon", password:"abcd", account_type:"customer"})
 User.create({username: "Paresh29", name:"Paresh", password:"1234",account_type:"customer"})
 User.create({username: "soulmecca", name:"Danny", password:"asdf",account_type:"admin"})
+User.create({username: "anotherperson", name:"Sharon", password:"secrete", account_type: "customer"})
 
 Order.create({restaurant_id: 1, user_id: 1, order: "ShackBurger"})
 Order.create({restaurant_id: 1, user_id: 2, order: "Shack Stack"})
