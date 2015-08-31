@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<header>
+		<nav></nav>
+		<h1><%=@restaurant.name%></h1>
+	</header>
+	<div id="ticket-order-display">
+		<h3><a href="">Ticket</a></h3>
+		<h3><a href="">Order</a></h3>
+	</div>
+	<div>
+		<%@menu.each do |item|%>
+			<form action="/location/#{@restaurant.id}/users/#{session[:user_id]}", input="put">
+				<input name="order" type="text" value="<%=item%>">
+				<button>submit</button>
+			</form>
+		<% end %>
+	</div>
+</body>
+</html>

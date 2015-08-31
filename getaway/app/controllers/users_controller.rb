@@ -16,12 +16,26 @@ class UsersController < ApplicationController
 		session[:in_line] = true
 		redirect_to "/location/#{params[:location_id]}/users/#{session[:user_id]}"
 	end
+
+	def put
+		Order.create({restaurant_id: params[:location_id], user_id: params[:id], order: params[:order]})
+	end
+
+	def destroy
+		visit = Visit.where(user_id: params[:id])[0]
+		visit.destroy
+		redirect_to location_users_path
+	end
 	
 	def show		
 		@restaurant = Restaurant.where(id: params[:location_id])[0]
 		@visit = Visit.where(user_id: params[:id])[0]
 	end
 
+	def menu
+		restaurant = Restaurant.where(id: params[:location_id])[0]
+		@menu = restaurant.menu.split(",")
+	end
 
 private
 	

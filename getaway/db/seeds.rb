@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Restaurant.create({name: "Shake Shack"})
+Restaurant.create({name: "Shake Shack", menu: "ShackBurger, Shack Stack, SmokeShack"})
 
 User.create({username: "Felix1234", name: "Felix", password:"1234", account_type:"customer"})
 User.create({username: "Ramen", name:"Sharon", password:"abcd", account_type:"customer"})
