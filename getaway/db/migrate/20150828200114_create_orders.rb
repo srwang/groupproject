@@ -4,6 +4,7 @@ class CreateOrders < ActiveRecord::Migration
       t.integer :restaurant_id
       t.integer :user_id
       t.text :order
+      t.integer :visit_id
 
       t.timestamps null: false
     end

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -18,3 +19,72 @@
 </body>
 </head>
 </html>
+=======
+<html>
+<head>
+	<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>StreamLine</title>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+</head>
+<body class="login-page">
+	<div class="pure-g">
+		<div class ="content-wrapper">
+			<div class="pure-u-1">
+				<div class="login-content">
+					<div class="pure-u-1">
+						<div class="login-logo">
+
+
+						</div>
+					</div>
+
+					<%= form_tag "/login" do  %>
+					<%= hidden_field_tag :id, params[:id]%>
+					<div class="pure-u-1">
+						<div class="login-username">
+							<div class="pure-u-1-5">
+								<div class="login-username-icon">
+								</div>
+							</div>
+							<div class="pure-u-3-5">
+								<div class="login-username-field">
+									<%= text_field_tag :username,nil, placeholder: "Username" %>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pure-u-1">
+						<div class="login-password">
+							<div class="pure-u-1-5">
+								<div class="login-password-icon">
+								</div>
+							</div>
+						<div class="pure-u-3-5">
+							<div class="login-password-field">
+							<%= password_field_tag :password, nil, placeholder: "Password" %>
+							</div>
+						</div>
+					</div>
+					<div class="pure-u-1">
+						<div class="login-button">
+							
+							<%= submit_tag "LOG IN" %>
+						</div>
+					</div>
+					 <% end %>
+					 <div class="pure-u-1">
+						<div class="login-signup">
+							No Account? Sign up <a href="#">Here</a>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+>>>>>>> ca4b7a80fee597f6237ed21ad508328b57e070a7
