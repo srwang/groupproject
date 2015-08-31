@@ -1,0 +1,42 @@
+
+$("#queue").click(function(){
+	$('#content').html("<%= j (render 'queue') %>");	
+	$("#queue a").css("color","#cd7971");
+	$(".restaurant-queue").css('border-bottom', 'solid 2px #cd7971');
+	$("#map a").css("color","#C0C0C0");
+	$(".restaurant-map").css('border-bottom', 'solid 2px #C0C0C0');
+	$("#menu a").css("color","#C0C0C0");
+	$(".restaurant-menu").css('border-bottom', 'solid 2px #C0C0C0');
+})
+
+
+$("#map").click(function(){
+	$('#content').html("<%= j (render 'map') %>");	
+	$("#map a").css("color","#cd7971");
+	$(".restaurant-map").css('border-bottom', 'solid 2px #cd7971');
+	$("#queue a").css("color","#C0C0C0");
+	$(".restaurant-queue").css('border-bottom', 'solid 2px #C0C0C0');
+	$("#menu a").css("color","#C0C0C0");
+	$(".restaurant-menu").css('border-bottom', 'solid 2px #C0C0C0');
+})
+
+
+$("#menu").click(function(){
+	$('#content').html("<%= j (render 'menu') %>");	
+	$("#menu a").css("color","#cd7971");
+	$(".restaurant-menu").css('border-bottom', 'solid 2px #cd7971');
+	$("#map a").css("color","#C0C0C0");
+	$(".restaurant-map").css('border-bottom', 'solid 2px #C0C0C0');
+	$("#queue a").css("color","#C0C0C0");
+	$(".restaurant-queue").css('border-bottom', 'solid 2px #C0C0C0');
+})
+
+$("#glass").click(function(){
+	$("#modal").toggle();
+	console.log("hello");
+});
+
+$("#modal").click(function(){
+	$("#modal").toggle();
+	console.log("hello")
+});
