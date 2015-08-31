@@ -6,16 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Restaurant.create({name: "Shake Shack"})
+Restaurant.create({name: "Shake Shack", user_id:4})
 
 User.create({username: "Felix1234", name: "Felix", password:"1234", account_type:"customer"})
 User.create({username: "Ramen", name:"Sharon", password:"abcd", account_type:"customer"})
 User.create({username: "Paresh29", name:"Paresh", password:"1234",account_type:"customer"})
 User.create({username: "soulmecca", name:"Danny", password:"asdf",account_type:"admin"})
 
-Order.create({restaurant_id: 1, user_id: 1, order: "ShackBurger"})
-Order.create({restaurant_id: 1, user_id: 2, order: "Shack Stack"})
-Order.create({restaurant_id: 1, user_id: 1, order: "SmokeShack"})
+Order.create({restaurant_id: 1, user_id: 1, order: "ShackBurger", visit_id:1})
+Order.create({restaurant_id: 1, user_id: 2, order: "Shack Stack", visit_id:2})
+Order.create({restaurant_id: 1, user_id: 1, order: "SmokeShack", visit_id:3})
 
 Visit.create({user_id:1, restaurant_id:1})
 Visit.create({user_id:2, restaurant_id:1})

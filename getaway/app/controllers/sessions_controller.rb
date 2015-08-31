@@ -1,6 +1,20 @@
 class SessionsController < ApplicationController
+
+
+
 	def login
 		render :index
-		puts params[:id]
+		
 	end
+
+
+	def create
+		puts "*************************"
+		puts name = params[:name]
+		puts params[:id]
+		
+		
+
+	end
+
 end
