@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   		@restaurant = Restaurant.find(params[:restaurant_id])
   		@user = User.find(params[:id])
   		@menu_items = MenuItem.where(restaurant_id:params[:restaurant_id])
-  		puts session[:in_line]
+  		@order = Order.new
 
   		if !(session[:in_line] == true)
 			Visit.create({user_id:params[:id], restaurant_id:params[:restaurant_id]})
@@ -17,10 +17,23 @@ class UsersController < ApplicationController
   		end
 	end
 
+	def new
+		Order.create(order_params)
+		puts params[:restaurant_id]
+		puts params[:user_id]
+		redirect_to "/restaurants/#{params[:restaurant_id]}/users/#{params[:user_id]}"
+	end
+
 	def destroy
 		visit = Visit.where(user_id: params[:id])[0]
 		visit.destroy
-		redirect_to restaurant_user_path
 		session[:in_line] = false
+		redirect_to restaurant_user_path
 	end
+
+private
+
+	def order_params
+		params.require(:order).permit(:restaurant_id, :user_id, :order, :visit_id)
+	end	
 end

@@ -1,9 +1,18 @@
 <div class='customer-ticket-content'>
 	<h1>Menu</h1>
-	<tr>
-	<%@menu_items.each do |item|%>
-		<td><%=item.name%></td>
-		<td><%=item.price%></td><br>
-	<%end%>	
-	</tr>
+	<tbody>
+		<tr>
+		<%@menu_items.each do |item|%>
+			<td><%=item.name%></td>
+			<td><%=item.price%></td><br>
+			<%= form_for @order, url: {action: "new"}, method: :get do |f| %>
+				<%= f.hidden_field :restaurant_id, value: @restaurant.id %>
+				<%= f.hidden_field :user_id, value: @user.id %>
+				<%= f.hidden_field :order, value: item.name %>
+				<%= f.hidden_field :visit_id, value: @visit.id %>
+				<%= f.submit 'Order' %> 
+			<% end %> 
+		<%end%>	
+		</tr>
+	</tbody>
 </div>
