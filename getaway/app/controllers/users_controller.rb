@@ -15,4 +15,11 @@ class UsersController < ApplicationController
   			format.js
   		end
 	end
+
+	def destroy
+		visit = Visit.where(user_id: params[:id])[0]
+		visit.destroy
+		redirect_to restaurant_user_path
+		session[:in_line] = false
+	end
 end

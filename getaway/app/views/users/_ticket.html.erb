@@ -3,4 +3,11 @@
 	<div class="ticket-number-box">
 		<%=@visit.id%>
 	</div>
+	<div class="waiting-time">
+		<h3>Waiting Time: </h3>
+	</div>
+	<%= form_tag({controller: "users", action: "destroy"}, method: "post") do %>
+		<input name="_method" type="hidden" value="delete">
+		<button>DROP</button>
+	<% end %>
 </div>
