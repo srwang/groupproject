@@ -1,0 +1,8 @@
+<div class="customer-enter-line" id="enter">
+	<h1>Get In Line</h1>
+	<%= form_for @visit, url: {action: "create"}, method: :post do |f| %>
+	    <%= f.hidden_field :restaurant_id, value: @restaurant.id %>
+	    <%= f.hidden_field :user_id, value: session[:user_id] %>
+	    <%= f.submit 'Get In (stream)Line!' %>
+	<% end %>
+</div>

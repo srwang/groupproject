@@ -1,0 +1,9 @@
+$("#ticket").click(function(){
+	console.log("clicked")
+	$('#content').html("<%= j (render 'ticket') %>");	
+})
+
+
+$("#order").click(function(){
+	$('#content').html("<%= j (render 'order') %>");	
+})

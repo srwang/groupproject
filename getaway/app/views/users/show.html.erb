@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>StreamLine</title>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+
+</head>
+<body class="restaurant-page">
+	<div class ="pure-g">
+		<!-- Navigation Bar -->
+		<div class = "pure-u-1">
+			<div class="nav-bar-container">
+				<div class="pure-u-7-24">
+					<div class="nav-bar-logo">
+
+					</div>
+				</div>
+				<div class="pure-u-15-24">
+					<div class="nav-bar-option">
+
+					</div>
+				</div>
+				<div class="pure-u-1-24">
+					<div class="nav-bar-logout">
+						LOGOUT
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Restaurant Banner -->
+
+		<div class="pure-u-1">
+			<div class="restaurant-banner">
+				Welcome, <%= @restaurant.name %>
+			</div>
+		</div>
+
+
+		<!-- User controller-->
+		<div class="pure-u-1">
+			<div class="customer-menu-bar">
+				<div class="pure-u-3-24">
+					<div class="customer-ticket" id="ticket">
+						<%= link_to 'Ticket', "/restaurants/#{@restaurant.id}/users/#{@user.id}", remote: true %>
+					</div>
+				</div>
+				<div class="pure-u-3-24">
+					<div class="customer-order" id="order">
+						<%= link_to 'Order', "/restaurants/#{@restaurant.id}/users/#{@user.id}", remote: true %>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- User -->
+		<div class="pure-u-1" >
+			<div class="controller-content" id="content">
+				
+		</div>
+
+
+	</div>
+</body>
+</html>
