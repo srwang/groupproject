@@ -1,3 +1,9 @@
 <div class='customer-ticket-content'>
 	<h1>Menu</h1>
+	<tr>
+	<%@menu_items.each do |item|%>
+		<td><%=item.name%></td>
+		<td><%=item.price%></td><br>
+	<%end%>	
+	</tr>
 </div>

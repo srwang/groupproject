@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 	def show
   		@restaurant = Restaurant.find(params[:restaurant_id])
   		@user = User.find(params[:id])
+  		@menu_items = MenuItem.where(restaurant_id:params[:restaurant_id])
   		puts session[:in_line]
 
   		if !(session[:in_line] == true)
