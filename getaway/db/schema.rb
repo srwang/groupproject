@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150831174458) do
     t.integer  "restaurant_id"
     t.integer  "user_id"
     t.text     "order"
+    t.integer  "visit_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -36,8 +37,8 @@ ActiveRecord::Schema.define(version: 20150831174458) do
     t.string   "name"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.integer  "menu_item_id"
     t.integer  "user_id"
+    t.integer  "menu_item_id"
   end
 
   add_index "restaurants", ["menu_item_id"], name: "index_restaurants_on_menu_item_id", using: :btree
