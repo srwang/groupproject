@@ -1,9 +1,13 @@
 
 <div class="pure-u-1">
-			<div class="next-button">
-				<button id="next"> NEXT </button>
-			</div>
+	<div class="restaurant-content-header">
+		Queue
+	</div>
+
+	<div class="next-button">
+			<button id="next"> NEXT </button>
 		</div>
+	</div>
 <div class="restaurant-queue-content">
 	<table>
 	  <thead>
@@ -16,11 +20,11 @@
 	  </thead>
 
 	  <tbody>
-	  	<% @restaurant.users.each do |user| %>
+	  	<% @restaurant.visits.each do |visit| %>
 	  	<tr>
 	    <td>#000</td>
-	    <td><%=user.name%></td>
-	    <td><img src=""></td>
+	    <td><%=visit.user.name%></td>
+	   <td class="orders"> <a href="javascript:void(0)"><%= image_tag "glass.png", :class => 'glass', :id =>'glass' %></a></td>
 		</tr>
 		<% end %>
 	  </tbody>

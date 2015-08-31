@@ -19,6 +19,7 @@
 	background-size: 40px 40px;
 	height:60px;
 	text-align: right;
+	margin-left: 30px;
 }
 .nav-bar-logout{
 	line-height: 60px;
@@ -27,6 +28,11 @@
 	font-weight: lighter;
 	text-align: right;
 	margin-left: 10px;
+}
+
+.nav-bar-logout a{
+	color:white;
+	text-decoration: none;
 }
 
 
@@ -67,15 +73,19 @@
 
 }
 
-.restaurant-menu a:active, .restaurant-map a:active, .restaurant-queue a:active{
-	
-	color: #cd7971 ;
-	border-bottom: 3px solid #cd7971;
+#map a, #menu a{
+	color: #C0C0C0  ;
 }
-.restaurant-menu, .restaurant-map, .restaurant-queue{
-	
-	color: #888888 ;
-	border-bottom: 2px solid #888888 ;
+
+#queue a{
+	color: #cd7971;
+}
+
+.restaurant-queue{
+	border-bottom: 2px solid #cd7971;
+}
+.restaurant-menu, .restaurant-map{
+	border-bottom: 2px solid #C0C0C0   ;
 }
 
 
@@ -103,9 +113,14 @@
 
 }
 
-.restaurant-menu-content, .restaurant-map-content{
+.restaurant-content-header{
 	text-align: center;
 	margin: 0 auto;
+	font-family: helvetica neue;
+	font-size: 30px;
+	margin-top: 30px;
+	font-weight: 300;
+	letter-spacing: 3px;
 }
 .next-button{
 	margin-top: 30px;
@@ -118,6 +133,7 @@
 	border: 1.5px solid #cd7971;
 	color: #cd7971;
 	height: 35px;
+	outline: none;
 }
 
 #next:hover{
@@ -133,9 +149,21 @@
 	border-bottom: 1px solid #888888;
 }
 
-.restaurant-queue-content tr{
-
+.retaurant-header{
+	text-align: center;
+	margin: 0 auto;
 }
+
+.glass{
+	width:20px;
+	height:20px;
+	text-align: center;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+
+
 
 
 

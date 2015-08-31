@@ -9,11 +9,19 @@ class RestaurantsController < ApplicationController
 #                 DELETE /restaurants/:id(.:format)      restaurants#destroy
 
 	def show
-		@restaurant = Restaurant.find(params[:id])
-		respond_to do |format|
+		
+		# actual_user = User.find(session[:user_id])
+		if logged_in?
+	      @current_user = User.find(session[:user_id])
+	      @restaurant = Restaurant.find(params[:id])
+	      respond_to do |format|
 			format.html
   			format.js
-  		end
+  			end
+  		else
+  			redirect_to '/login/1'
+    	end
+		
 	end
 
 end

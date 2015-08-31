@@ -19,7 +19,9 @@
 
 						</div>
 					</div>
-					<%= form_tag "/sessions" do  %>
+
+					<%= form_tag "/login" do  %>
+					<%= hidden_field_tag :id, params[:id]%>
 					<div class="pure-u-1">
 						<div class="login-username">
 							<div class="pure-u-1-5">
@@ -47,6 +49,7 @@
 					</div>
 					<div class="pure-u-1">
 						<div class="login-button">
+							
 							<%= submit_tag "LOG IN" %>
 						</div>
 					</div>
