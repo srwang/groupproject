@@ -19,9 +19,7 @@ class UsersController < ApplicationController
 
 	def new
 		Order.create(order_params)
-		puts params[:restaurant_id]
-		puts params[:user_id]
-		redirect_to "/restaurants/#{params[:restaurant_id]}/users/#{params[:user_id]}"
+		redirect_to "/restaurants/#{params[:restaurant_id]}/users/#{params[:order][:user_id]}"
 	end
 
 	def destroy
