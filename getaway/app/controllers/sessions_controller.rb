@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
             if user.account_type == 'admin'
                 redirect_to restaurant_path(restaurant)
             else
-            	redirect_to user_path(user)
+            	redirect_to "/restaurants/#{params[:id]}/users/#{user.id}"
             end
         else
             redirect_to(:back)

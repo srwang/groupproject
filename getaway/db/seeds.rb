@@ -30,4 +30,10 @@ Visit.create({user_id:1, restaurant_id:1})
 Visit.create({user_id:2, restaurant_id:1})
 Visit.create({user_id:3, restaurant_id:1})
 
+Temp.create({user_id:1, restaurant_id:1})
+Temp.create({user_id:2, restaurant_id:1})
+Temp.create({user_id:3, restaurant_id:1})
+
+
+
 

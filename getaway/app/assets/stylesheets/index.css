@@ -32,10 +32,36 @@ body.login-page{
 	text-align: left;
 }
 
+.login-name{
+	background: url(/assets/blur.png) no-repeat center; 
+	background-size: 240px 40px;
+	width: 240px;
+	height: 37.5px;
+	margin: 0 auto;
+	line-height: 40px;
+	text-align: left;
+	margin-top: 20px;
+}
+.login-header{
+	color:white;
+	margin-bottom: 30px;
+	font-size: 20px;
+	font-weight: lighter;
+	font-family: helvetica neue; 
+}
+
 
 .login-username-icon{
 	padding-top: 7px;
 	background: url(/assets/profile_icon.png) no-repeat center; 
+	background-size: 25px 25px;
+	height:30px;
+	border-right: 1px white solid;
+}
+
+.login-name-icon{
+	padding-top: 7px;
+	background: url(/assets/name.png) no-repeat center; 
 	background-size: 25px 25px;
 	height:30px;
 	border-right: 1px white solid;
@@ -50,7 +76,7 @@ body.login-page{
 	border-right: 1px white solid;
 }
 
-#username, #password{
+#username, #password,#name, #user_username, #user_password,#user_name{
 	background: none;
 	height:30px;
 	color: white;
