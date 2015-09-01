@@ -10,9 +10,12 @@ function readCookie(name) {
 }
 
 var client = new WebSocket("ws://localhost:2000/");
-client.addEventListener("message", function(val){
-    // $('body').append(val.data)
-});
+
 client.addEventListener("open", function(val){
-    client.send(readCookie("user_id"))
+	client.send(readCookie("user_id"))
+	client.send("hi")
+});
+client.addEventListener("message", function(val){
+    $('body').append(val.data)
+
 });
