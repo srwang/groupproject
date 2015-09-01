@@ -22,16 +22,23 @@ class UsersController < ApplicationController
     	end
 	end
 
+
 	def new
+
 		Order.create(order_params)
 		redirect_to "/restaurants/#{params[:restaurant_id]}/users/#{params[:order][:user_id]}"
+		@restaurant = Restaurant.find(params[:restaurant_id])
+		@user = User.new
+	end
+
+	def create
+		@user = User.create(user_params)
+    	redirect_to '/login/1'
+
 	end
 
 	def destroy
-		visit = Visit.where(user_id: params[:id])[0]
-		visit.destroy
-		session[:in_line] = false
-		redirect_to restaurant_user_path
+		
 	end
 
 private
@@ -39,4 +46,8 @@ private
 	def order_params
 		params.require(:order).permit(:restaurant_id, :user_id, :order, :visit_id)
 	end	
+
+	def user_params
+		params.require(:user).permit(:username, :name, :password, :account_type)
+	end
 end

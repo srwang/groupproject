@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>StreamLine</title>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+</head>
+<body class="login-page">
+	<div class="pure-g">
+		<div class ="content-wrapper">
+			<div class="pure-u-1">
+				<div class="login-content">
+					<div class="pure-u-1">
+						<div class="login-logo">
+						</div>
+					</div>
+					<div class="pure-u-1">
+						<div class="login-header">
+							Sign up for a New Account
+						</div>
+					</div>
+
+					<%= form_for ([@restaurant, @user]) do |f| %>
+						<%= f.hidden_field :account_type, {:value => 'customer'} %>
+							<div class="pure-u-1">
+								<div class="login-username">
+									<div class="pure-u-1-5">
+										<div class="login-username-icon">
+										</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="login-username-field">
+											<%= f.text_field :username, :placeholder=> "Username" %>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="pure-u-1">
+								<div class="login-name">
+									<div class="pure-u-1-5">
+										<div class="login-name-icon">
+										</div>
+									</div>
+									<div class="pure-u-3-5">
+										<div class="login-username-field">
+											<%= f.text_field :name, :placeholder=> "Name" %>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="pure-u-1">
+								<div class="login-password">
+									<div class="pure-u-1-5">
+										<div class="login-password-icon">
+										</div>
+									</div>
+								<div class="pure-u-3-5">
+									<div class="login-password-field">
+									<%= f.password_field :password,  :placeholder=> "Password" %>
+									</div>
+								</div>
+							</div>
+							<div class="pure-u-1">
+								<div class="login-button">
+									
+									<%= f.submit "CREATE" %>
+								</div>
+							</div>
+					 <% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

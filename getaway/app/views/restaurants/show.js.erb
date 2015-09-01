@@ -1,5 +1,8 @@
 
-$("#queue").click(function(){
+
+
+$("#queue").click(function(event){
+	event.preventDefault();
 	$('#content').html("<%= j (render 'queue') %>");	
 	$("#queue a").css("color","#cd7971");
 	$(".restaurant-queue").css('border-bottom', 'solid 2px #cd7971');
@@ -10,7 +13,8 @@ $("#queue").click(function(){
 })
 
 
-$("#map").click(function(){
+$("#map").click(function(event){
+	event.preventDefault();
 	$('#content').html("<%= j (render 'map') %>");	
 	$("#map a").css("color","#cd7971");
 	$(".restaurant-map").css('border-bottom', 'solid 2px #cd7971');
@@ -21,7 +25,8 @@ $("#map").click(function(){
 })
 
 
-$("#menu").click(function(){
+$("#menu").click(function(event){
+	event.preventDefault();
 	$('#content').html("<%= j (render 'menu') %>");	
 	$("#menu a").css("color","#cd7971");
 	$(".restaurant-menu").css('border-bottom', 'solid 2px #cd7971');
@@ -30,6 +35,25 @@ $("#menu").click(function(){
 	$("#queue a").css("color","#C0C0C0");
 	$(".restaurant-queue").css('border-bottom', 'solid 2px #C0C0C0');
 })
+
+
+$("#next").click(function(){
+	var $secondRow =  $("#queue-table tr").eq(1);
+	
+	$.ajax({
+    url: '/queues',
+    type: 'POST',
+    data: {'_method': 'delete'},
+    success: function(result) {
+    	  $secondRow.css("background-color","#99EB99");
+        $secondRow.fadeOut(300,function() {
+					$secondRow.remove();
+			});
+    }
+	});
+// console.log("hello");
+
+});
 
 $("#glass").click(function(){
 	$("#modal").toggle();
