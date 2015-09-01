@@ -5,11 +5,13 @@
 	</div>
 
 	<div class="next-button">
-			<button id="next"> NEXT </button>
-		</div>
+		
+  			 <button id="next">Next</button>
+
+	</div>
 	</div>
 <div class="restaurant-queue-content">
-	<table>
+	<table id="queue-table">
 	  <thead>
 	    <tr>
 	      <th>Ticket</th>
@@ -20,10 +22,10 @@
 	  </thead>
 
 	  <tbody>
-	  	<% @restaurant.visits.each do |visit| %>
+	  	<% @restaurant.temps.each do |temp| %>
 	  	<tr>
 	    <td>#000</td>
-	    <td><%=visit.user.name%></td>
+	    <td><%=temp.user.name%></td>
 	   <td class="orders"> <a href="javascript:void(0)"><%= image_tag "glass.png", :class => 'glass', :id =>'glass' %></a></td>
 		</tr>
 		<% end %>

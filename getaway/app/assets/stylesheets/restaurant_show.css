@@ -51,6 +51,19 @@
 	padding-left: 20px;
 }
 
+.restaurant-banner-mobile{
+	background: url(/assets/banner.jpg) no-repeat center; 
+	height: 75px;
+	position: relative;
+	color: white;
+	text-align: left;
+	line-height: 75px;
+	font-size: 30px;
+	font-weight: lighter;
+	font-family: helvetica neue;
+	padding-left: 20px;
+}
+
 .restaurant-menu-bar{
 	margin: 0 auto;
 	text-align: center;
@@ -135,11 +148,19 @@
 	height: 35px;
 	outline: none;
 }
+#next a{
+	color:#cd7971;
+}
+#next a:hover{
+	color:white;
+}
 
 #next:hover{
 	color:white;
 	background: #cd7971;
 }
+
+
 
 .restaurant-queue-content td{
 	padding-left: 30px;

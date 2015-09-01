@@ -1,9 +1,23 @@
+
 $("#ticket").click(function(){
 	console.log("clicked")
 	$('#content').html("<%= j (render 'ticket') %>");	
+	$(".customer-ticket a").css("color","#cd7971");
+	$(".customer-ticket").css('border-bottom', 'solid 2px #cd7971');
+	$(".customer-order a").css("color","#C0C0C0");
+	$(".customer-order").css('border-bottom', 'solid 2px #C0C0C0');
 })
 
 
 $("#order").click(function(){
 	$('#content').html("<%= j (render 'order') %>");	
+	$(".customer-order a").css("color","#cd7971");
+	$(".customer-order").css('border-bottom', 'solid 2px #cd7971');
+	$(".customer-ticket a").css("color","#C0C0C0");
+	$(".customer-ticket").css('border-bottom', 'solid 2px #C0C0C0');
 })
+
+
+// SIDE BAR -- LICENSE FROM JQUERY
+
+

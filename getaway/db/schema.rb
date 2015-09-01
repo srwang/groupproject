@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150831174458) do
+ActiveRecord::Schema.define(version: 20150901191731) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,9 +39,18 @@ ActiveRecord::Schema.define(version: 20150831174458) do
     t.datetime "updated_at",   null: false
     t.integer  "user_id"
     t.integer  "menu_item_id"
+    t.integer  "temp_id"
   end
 
   add_index "restaurants", ["menu_item_id"], name: "index_restaurants_on_menu_item_id", using: :btree
+  add_index "restaurants", ["temp_id"], name: "index_restaurants_on_temp_id", using: :btree
+
+  create_table "temps", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "restaurant_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -52,9 +61,11 @@ ActiveRecord::Schema.define(version: 20150831174458) do
     t.datetime "updated_at",      null: false
     t.integer  "order_id"
     t.integer  "visit_id"
+    t.integer  "temp_id"
   end
 
   add_index "users", ["order_id"], name: "index_users_on_order_id", using: :btree
+  add_index "users", ["temp_id"], name: "index_users_on_temp_id", using: :btree
   add_index "users", ["visit_id"], name: "index_users_on_visit_id", using: :btree
 
   create_table "visits", force: :cascade do |t|
@@ -65,6 +76,8 @@ ActiveRecord::Schema.define(version: 20150831174458) do
   end
 
   add_foreign_key "restaurants", "menu_items"
+  add_foreign_key "restaurants", "temps"
   add_foreign_key "users", "orders"
+  add_foreign_key "users", "temps"
   add_foreign_key "users", "visits"
 end
