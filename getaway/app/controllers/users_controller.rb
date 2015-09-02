@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 				Visit.create({user_id:session[:user_id], restaurant_id:params[:restaurant_id]})
 				session[:in_line] = true
 			end
-			tempArr = Temp.all
+			tempArr = Temp.order("id")
 
 			
 			tempArr.each do |temp|
@@ -24,7 +24,6 @@ class UsersController < ApplicationController
 					puts @visit
 				end
 			end
-
 
 			respond_to do |format|
 				format.html
@@ -51,7 +50,8 @@ class UsersController < ApplicationController
 			admins.push(admin.id)
 		end
 
-		visit = Visit.where(user_id: session[:user_id])[0] # how to see which instance of the visit
+		visit = Visit.where(user_id: session[:user_id])
+		visit = visit[visit.length-1] 
 		visit.update(menu: orderString)
 
 		temp = Temp.where(user_id: session[:user_id])[0]
@@ -66,11 +66,12 @@ class UsersController < ApplicationController
     	redirect_to '/login/1'
 	end
 
-	def destroy #trying to get the numbers to decrement
+	def destroy 
 		temp = Temp.where(user_id: session[:user_id])[0]
 		temp.destroy
 
-		visit = Visit.where(user_id: session[:user_id])[0]
+		visit = Visit.where(user_id: session[:user_id])
+		visit = visit[visit.length-1]
 		visit.destroy
 
 		session[:in_line] = nil
