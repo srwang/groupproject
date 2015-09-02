@@ -13,6 +13,8 @@ Rails.application.routes.draw do
       delete '/login' => 'sessions#destroy'
 
       delete '/queues' => 'queues#destroy'
+
+      post '/restaurants/:restaurant_id/users/orders' => 'users#orders'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
@@ -22,8 +24,7 @@ Rails.application.routes.draw do
       resources :restaurants do 
         resources :users
       end
-      resources :visits   
-      resources :orders  
+      resources :orders
 
   # Example resource route with options:
   #   resources :products do

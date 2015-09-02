@@ -1,3 +1,4 @@
+var orderString = "";
 
 $("#ticket").click(function(){
 	console.log("clicked")
@@ -17,19 +18,9 @@ $("#order").click(function(){
 	$(".customer-ticket").css('border-bottom', 'solid 2px #C0C0C0');
 })
 
-$('.button').click(function(){
-    var client = new WebSocket("ws://localhost:2000/");
-    debugger
-    // var order = $(this).parent().find('#order_order').val();
-    // var res_id = $(this).parent().find('#order_restaurant_id').val();
-    client.addEventListener("open", function(val){
-        client.send("You have an order from " + readCookie('user_name') + " admin id: " + readCookie('admin_id'))
-    });
-})
-
-$('.button').click(function(){
+$('.submit').click(function(){
 	var client = new WebSocket("ws://localhost:2000/");
-    // var order = $(this).parent().find('#order_order').val();
+//     var order = $(this).parent().find('.order').val();
     // var res_id = $(this).parent().find('#order_restaurant_id').val();
     client.addEventListener("open", function(val){
         client.send("You have an order from " + readCookie('user_name') + " admin id: " + readCookie('admin_id'))

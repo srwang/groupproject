@@ -24,15 +24,6 @@ ActiveRecord::Schema.define(version: 20150901210900) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.integer  "restaurant_id"
-    t.integer  "user_id"
-    t.text     "order"
-    t.integer  "visit_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
   create_table "restaurants", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",   null: false
@@ -60,12 +51,10 @@ ActiveRecord::Schema.define(version: 20150901210900) do
     t.string   "account_type"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.integer  "order_id"
     t.integer  "visit_id"
     t.integer  "temp_id"
   end
 
-  add_index "users", ["order_id"], name: "index_users_on_order_id", using: :btree
   add_index "users", ["temp_id"], name: "index_users_on_temp_id", using: :btree
   add_index "users", ["visit_id"], name: "index_users_on_visit_id", using: :btree
 
@@ -79,7 +68,6 @@ ActiveRecord::Schema.define(version: 20150901210900) do
 
   add_foreign_key "restaurants", "menu_items"
   add_foreign_key "restaurants", "temps"
-  add_foreign_key "users", "orders"
   add_foreign_key "users", "temps"
   add_foreign_key "users", "visits"
 end

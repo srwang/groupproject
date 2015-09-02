@@ -2,17 +2,12 @@
 	<h1>Menu</h1>
 	<tbody>
 		<tr>
-		<%@menu_items.each do |item|%>
-			<td><%=item.name%></td>
-			<td><%=item.price%></td><br>
-			<%= form_for @order, url: {action: "new"}, method: :get do |f| %>
-				<%= f.hidden_field :restaurant_id, value: @restaurant.id %>
-				<%= f.hidden_field :user_id, value: @user.id %>
-				<%= f.hidden_field :order, value: item.name %>
-				<%= f.hidden_field :visit_id, value: @visit.id %>
-				<%= f.submit 'Order', :class => "button" %> 
-			<% end %> 
-		<%end%>	
+		<form action="/restaurants/<%=@restaurant.id%>/users/new" method="get">
+			<%@menu_items.each do |item|%>
+				<input type="checkbox" name="orders[]" value="<%=item.name%>">$<%=item.price%> <%=item.name%> <br>
+			<%end%>
+			<button class="submit">Order</button>
+		</form>
 		</tr>
 	</tbody>
 </div>
