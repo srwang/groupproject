@@ -5,4 +5,5 @@ class Restaurant < ActiveRecord::Base
 	has_many :orders
 	has_many :visits
 	has_many :temps
+	has_many :menu_items
 end

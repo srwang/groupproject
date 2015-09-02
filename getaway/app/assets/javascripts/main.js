@@ -1,9 +1,11 @@
 
 
 $(document).ready(function() {
-	$(document).on('click','.glass',function(){
+	$(document).on('click','#view',function(){
 		$("#modal").toggle();
-		console.log("hello");
+		var customerID = $(this).val();
+		console.log(customerID);
+		console.log("hello");	
 	});
 
 	$(document).on('click',".modal-close",function(){
@@ -27,6 +29,11 @@ $(document).on('click','#next',function(){
 			});
     }
 });
+
+
+
+
+
 // console.log("hello");
 
 });

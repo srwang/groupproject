@@ -33,10 +33,10 @@
                 </thead>
 
                 <tbody>
-                  <% @restaurant.visits.each do |visit| %>
+                  <% @restaurant.temps.each do |temp| %>
                   <tr>
-                  <td>#000</td>
-                  <td><%=visit.user.name%></td>
+                  <td><%=temp.menu%></td>
+                  <td><%=temp.user.name%></td>
                   <td >12</td>
                   </tr>
                 <% end %>

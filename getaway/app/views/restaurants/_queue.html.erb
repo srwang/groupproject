@@ -5,10 +5,6 @@
 	</div>
 
 	<div class="next-button">
-
-			<button id="next" value = "<%=@restaurant.temps.first.user_id call%>"> NEXT </button>
-
-		</div>
 		
   		 <button id="next">Next</button>
 
@@ -31,7 +27,7 @@
 	  	<tr>
 	    <td>#<%=temp.id%></td>
 	    <td><%=temp.user.name%></td>
-	   <td class="orders"> <a href="javascript:void(0)"><%= image_tag "glass.png", :class => 'glass', :id =>'glass' %></a></td>
+	   <td class="orders"> <a href="javascript:void(0)"><button value="<%=temp.user.id%>" id="view">View</button></a></td>
 		</tr>
 		<% end %>
 	  </tbody>

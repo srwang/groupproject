@@ -8,10 +8,10 @@ class UsersController < ApplicationController
 	  		@order = Order.new
 
 	  		if !(session[:in_line] == true)
-				Visit.create({user_id:params[:id], restaurant_id:params[:restaurant_id]})
+				Temp.create({user_id:params[:id], restaurant_id:params[:restaurant_id]})
 				session[:in_line] = true
 				end
-				@visit = Visit.last
+				@temp = Temp.last
 
 			respond_to do |format|
 				format.html

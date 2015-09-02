@@ -14,6 +14,7 @@ body.user-page{
 	text-align: center;
 	margin: 0 auto;	
 	margin-top: 30px;
+	border-bottom: 1px solid #CCCCCC;
 }
 
 .customer-ticket{
