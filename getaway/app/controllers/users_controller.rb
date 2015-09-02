@@ -26,7 +26,6 @@ class UsersController < ApplicationController
 
 	def new
 		Order.create(order_params)
-		redirect_to "/restaurants/#{params[:restaurant_id]}/users/#{params[:order][:user_id]}"
 
 		@restaurant = Restaurant.find(params[:restaurant_id])
 		@user = User.new
