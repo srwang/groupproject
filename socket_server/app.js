@@ -3,24 +3,35 @@ var server = new WebSocketServer({port: 2000});
 
 var clients = [];
 
-client_id = "2";
-
   server.on("connection",function(client) {
  
-    client.on('message', function(message) {
-        
-        if (/[1-9]+/.test(message)) {
+    client.on('message', function(message) {        
+        if (parseInt(message)) {//changed this
             var user= {id: message, connection: client}
             clients.push(user)              
-        } else {
-            console.log("client id " + client_id)
-            clients.forEach(function(client){
-                if (client.id === client_id) {
-                    client.connection.send('hi there')
-                }
-            })
+        } else { // sending a message to admin or user
+
+            if (message.split(" ")[0] === "You") {
+                message = message.split("admin id:")
+                var adminArr = message[1].split(' ')
+
+                adminArr.forEach(function(admin){
+                    sendMessage(admin, message[0].trim());
+                })
+            } else {
+                console.log("sending hey there")
+                sendMessage("2", "hey there");
+            }
+
+            function sendMessage(client_id, message) {//made this into function
+                clients.forEach(function(client){
+                    if (client.id === client_id) {
+                        client.connection.send(message)
+                    }
+                })               
+            }
+
         } 
-        console.log(clients)     
     });
 
   client.on("close", function() {
