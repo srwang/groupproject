@@ -36,4 +36,3 @@ Temp.create({user_id:3, restaurant_id:1, menu: "SmokeShack"})
 
 
 
-
