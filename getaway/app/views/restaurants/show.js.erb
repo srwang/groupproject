@@ -1,21 +1,22 @@
 
+$(document).ready(function() {
+$("#queue").on('click',function(event){
 
-
-$("#queue").click(function(event){
-	event.preventDefault();
-	$('#content').html("<%= j (render 'queue') %>");	
-	$("#queue a").css("color","#cd7971");
+	$('#content').empty().append("<%= j (render 'queue') %>");
+	$("#queue a").css("color","#cd7971")
 	$(".restaurant-queue").css('border-bottom', 'solid 2px #cd7971');
 	$("#map a").css("color","#C0C0C0");
 	$(".restaurant-map").css('border-bottom', 'solid 2px #C0C0C0');
 	$("#menu a").css("color","#C0C0C0");
 	$(".restaurant-menu").css('border-bottom', 'solid 2px #C0C0C0');
+
+	
 })
 
 
-$("#map").click(function(event){
-	event.preventDefault();
-	$('#content').html("<%= j (render 'map') %>");	
+$('#map').on('click',function(event){
+	
+	$('#content').empty().append("<%= j (render 'map') %>")
 	$("#map a").css("color","#cd7971");
 	$(".restaurant-map").css('border-bottom', 'solid 2px #cd7971');
 	$("#queue a").css("color","#C0C0C0");
@@ -25,9 +26,9 @@ $("#map").click(function(event){
 })
 
 
-$("#menu").click(function(event){
-	event.preventDefault();
-	$('#content').html("<%= j (render 'menu') %>");	
+$('#menu').on('click',function(event){
+	
+	$('#content').empty().append("<%= j (render 'menu') %>")
 	$("#menu a").css("color","#cd7971");
 	$(".restaurant-menu").css('border-bottom', 'solid 2px #cd7971');
 	$("#map a").css("color","#C0C0C0");
@@ -37,30 +38,13 @@ $("#menu").click(function(event){
 })
 
 
-$("#next").click(function(){
-	var $secondRow =  $("#queue-table tr").eq(1);
-	
-	$.ajax({
-    url: '/queues',
-    type: 'POST',
-    data: {'_method': 'delete'},
-    success: function(result) {
-    	  $secondRow.css("background-color","#99EB99");
-        $secondRow.fadeOut(300,function() {
-					$secondRow.remove();
-			});
-    }
-	});
-// console.log("hello");
 
-});
+})
 
-$("#glass").click(function(){
-	$("#modal").toggle();
-	console.log("hello");
-});
 
-$("#modal").click(function(){
-	$("#modal").toggle();
-	console.log("hello")
-});
+
+
+
+
+
+

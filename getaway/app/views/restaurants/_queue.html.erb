@@ -24,7 +24,7 @@
 	  <tbody>
 	  	<% @restaurant.temps.each do |temp| %>
 	  	<tr>
-	    <td>#000</td>
+	    <td>#<%=temp.id%></td>
 	    <td><%=temp.user.name%></td>
 	   <td class="orders"> <a href="javascript:void(0)"><%= image_tag "glass.png", :class => 'glass', :id =>'glass' %></a></td>
 		</tr>
