@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
 	def show
 		if logged_in?
 			@restaurant = Restaurant.find(params[:restaurant_id])
@@ -11,7 +12,6 @@ class UsersController < ApplicationController
 				Visit.create({user_id:params[:id], restaurant_id:params[:restaurant_id]})
 				session[:in_line] = true
 			end
-
 			@visit = Temp.last
 
 			respond_to do |format|
@@ -26,6 +26,8 @@ class UsersController < ApplicationController
 
 	def new
 		Order.create(order_params)
+		redirect_to "/restaurants/#{params[:restaurant_id]}/users/#{params[:order][:user_id]}"
+
 		@restaurant = Restaurant.find(params[:restaurant_id])
 		@user = User.new
 		admin = User.where(account_type: "admin")

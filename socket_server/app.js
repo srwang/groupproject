@@ -40,5 +40,8 @@ var clients = [];
             clients.splice(clients.indexOf(item), 1)
         }
     })
-  });
+  
+    });
+
+
 });
