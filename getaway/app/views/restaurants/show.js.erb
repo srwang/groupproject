@@ -1,5 +1,5 @@
   
-$("#queue").on('click',function(event){
+$("#queue").off().on('click',function(event){
 
 	$('#content').empty().append("<%= j (render 'queue') %>");
 	$("#queue a").css("color","#58759d")
@@ -12,7 +12,7 @@ $("#queue").on('click',function(event){
 })
 
 
-$('#map').on('click',function(event){
+$('#map').off().on('click',function(event){
 	
 	$('#content').empty().append("<%= j (render 'map') %>")
 	$("#map a").css("color","#58759d");
@@ -21,11 +21,11 @@ $('#map').on('click',function(event){
 	$(".restaurant-queue").css('border-bottom', 'solid 2px #C0C0C0');
 	$("#menu a").css("color","#C0C0C0");
 	$(".restaurant-menu").css('border-bottom', 'solid 2px #C0C0C0');
-
+	
 })
 
 
-$('#menu').on('click',function(event){
+$('#menu').off().on('click',function(event){
 	
 	$('#content').empty().append("<%= j (render 'menu') %>")
 	$("#menu a").css("color","#58759d");
@@ -34,10 +34,10 @@ $('#menu').on('click',function(event){
 	$(".restaurant-map").css('border-bottom', 'solid 2px #C0C0C0');
 	$("#queue a").css("color","#C0C0C0");
 	$(".restaurant-queue").css('border-bottom', 'solid 2px #C0C0C0');
-
+	
 })
 
-$("#next").on('click', function(){
+$('document').off().on('click', '#next', function(){
 
 	thisId = this.value
 
@@ -48,10 +48,10 @@ $("#next").on('click', function(){
 	    type: 'POST',
 	    data: {'_method': 'delete'},
 	    success: function(result) {
-	    	  $secondRow.css("background-color","#99EB99");
-	        $secondRow.fadeOut(300,function() {
-						$secondRow.remove();
-					$('#content').empty().append("<%= j (render 'queue') %>");	
+				$('#content').html("<%= j (render 'queue') %>");	
+				$secondRow.css("background-color","#99EB99");
+	         $secondRow.fadeOut(300,function() {
+				$secondRow.remove();
 				});
 	    }
 	});
