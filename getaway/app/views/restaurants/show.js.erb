@@ -37,9 +37,22 @@ $('#menu').off().on('click',function(event){
 	
 })
 
+$('#next').click(function(){
+	alert("hello!")
+	thisId = this.value
+
+	var client = new WebSocket("ws://localhost:2000/");
+
+	client.addEventListener('open', function(){
+		client.send(thisId)	
+	})
+
+
+})
+
 $('document').off().on('click', '#next', function(){
 
-	thisId = this.value
+	
 
 	var $secondRow =  $("#queue-table tr").eq(1);
 	//AJAX delete request
@@ -56,12 +69,7 @@ $('document').off().on('click', '#next', function(){
 	    }
 	});
 
-	var client = new WebSocket("ws://localhost:2000/");
-
-	client.addEventListener('open', function(){
-		client.send(thisId)	
-	})
-
+	
 });
 
 

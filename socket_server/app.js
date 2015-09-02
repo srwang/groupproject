@@ -26,7 +26,6 @@ var clients = [];
           var user= {id: message, connection: client}
           clients.push(user)  
           console.log(clients)
-
         }
       }else if (message.split(" ")[0] === "You") {
         console.log("***************")
