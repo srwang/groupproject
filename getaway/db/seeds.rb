@@ -33,11 +33,6 @@ Visit.create({user_id:3, restaurant_id:1, menu: "SmokeShack"})
 Temp.create({user_id:1, restaurant_id:1, menu: "ShackBurger"})
 Temp.create({user_id:2, restaurant_id:1, menu: "ShackStack"})
 Temp.create({user_id:3, restaurant_id:1, menu: "SmokeShack"})
-Temp.create({user_id:1, restaurant_id:1, menu: "ShackBurger"})
-Temp.create({user_id:2, restaurant_id:1, menu: "ShackStack"})
-Temp.create({user_id:3, restaurant_id:1, menu: "SmokeShack"})
-Temp.create({user_id:1, restaurant_id:1, menu: "ShackBurger"})
-Temp.create({user_id:2, restaurant_id:1, menu: "ShackStack"})
-Temp.create({user_id:3, restaurant_id:1, menu: "SmokeShack"})
+
 
 

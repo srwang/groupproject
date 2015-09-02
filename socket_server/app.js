@@ -1,7 +1,9 @@
 var WebSocketServer = require("ws").Server;
 var server = new WebSocketServer({port: 2000});
+client_count = 1;
 
 var clients = [];
+
 
   server.on("connection",function(client) {
     // console.log(client_count)
@@ -33,18 +35,11 @@ var clients = [];
                 message = message.split("admin id:")
 
                 console.log(message)
-  
-        } else { // sending a message to admin or user
-
-            if (message.split(" ")[0] === "You") {
-                message = message.split("admin id:")
-
                 var adminArr = message[1].split(' ')
 
                 adminArr.forEach(function(admin){
                     sendMessage(admin, message[0].trim());
                 })
-
             function sendMessage(client_id, message) {//made this into function
               clients.forEach(function(client){
                   if (client.id === client_id) {
@@ -92,34 +87,6 @@ var clients = [];
     })
 
   });
-
-});
-
-            } else {
-                console.log("sending hey there")
-                sendMessage("2", "hey there");
-            }
-
-            function sendMessage(client_id, message) {//made this into function
-                clients.forEach(function(client){
-                    if (client.id === client_id) {
-                        client.connection.send(message)
-                    }
-                })               
-            }
-
-        } 
-    });
-
-  client.on("close", function() {
-    clients.forEach(function(item){
-        if (client === item.connection) {
-            clients.splice(clients.indexOf(item), 1)
-        }
-    })
-  
-    });
-
 
 });
 

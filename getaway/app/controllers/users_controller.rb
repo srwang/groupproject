@@ -3,6 +3,8 @@ class UsersController < ApplicationController
 	def show
 		if logged_in?
 			@restaurant = Restaurant.find(params[:restaurant_id])
+				puts "******************"
+				puts session[:user_id]
 	  		@user = User.find(session[:user_id])
 	  		@menu_items = MenuItem.where(restaurant_id:params[:restaurant_id])
 	  		@order = Order.new
@@ -38,7 +40,7 @@ class UsersController < ApplicationController
 		end
 
 		cookies[:admin_id] = admins
-		redirect_to "/restaurants/#{params[:restaurant_id]}/users/#{params[:order][:user_id]}"
+		redirect_to "/restaurants/#{params[:restaurant_id]}/users/#{session[:user_id]}"
 	end
 
 	def create
