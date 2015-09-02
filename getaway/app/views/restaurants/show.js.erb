@@ -36,10 +36,12 @@ $("#menu").click(function(event){
 	$(".restaurant-queue").css('border-bottom', 'solid 2px #C0C0C0');
 })
 
+$("#next").on('click', function(){
 
-$("#next").click(function(){
+	thisId = this.value
+
 	var $secondRow =  $("#queue-table tr").eq(1);
-	
+
 	$.ajax({
     url: '/queues',
     type: 'POST',
@@ -48,10 +50,18 @@ $("#next").click(function(){
     	  $secondRow.css("background-color","#99EB99");
         $secondRow.fadeOut(300,function() {
 					$secondRow.remove();
+				$('#content').empty().append("<%= j (render 'queue') %>");	
 			});
     }
 	});
 // console.log("hello");
+
+
+	var client = new WebSocket("ws://localhost:2000/");
+	
+		client.addEventListener('open', function(){
+			client.send(thisId)	
+		})
 
 });
 
@@ -64,5 +74,15 @@ $("#modal").click(function(){
 	$("#modal").toggle();
 	console.log("hello")
 });
+
+
+
+
+
+
+
+
+
+
 
 

@@ -5,9 +5,6 @@ class SessionsController < ApplicationController
 
     def login
         render :index
-        # @id = params[:id]
-        # cookies[:user_id] = params[:id]
-        # session[:user_id] = params[:id]
     end
 
     def create 
@@ -27,13 +24,13 @@ class SessionsController < ApplicationController
         end
 
     end
-            
 
     def  destroy 
         session[:user_id] = nil
         cookies[:user_id] = nil
         cookies[:user_name] = nil
         session[:in_line] = nil
+        cookies[:user_id] = nil
         redirect_to '/login/1'
     end 
 
