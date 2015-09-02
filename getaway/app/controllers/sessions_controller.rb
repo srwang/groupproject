@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     def login
         render :index
         @id = params[:id]
+        cookies[:user_id] = params[:id]
     end
 
     def create 
@@ -14,6 +15,7 @@ class SessionsController < ApplicationController
         restaurant = Restaurant.find(params[:id])
         if user && user.authenticate(params[:password])
             	session[:user_id] = user.id
+                cookies[:user_id] = user.id
             if user.account_type == 'admin'
                 redirect_to restaurant_path(restaurant)
             else
@@ -28,6 +30,7 @@ class SessionsController < ApplicationController
 
     def  destroy 
         session[:user_id] = nil
+        session[:in_line] = nil
         redirect_to '/login/1'
     end 
 
