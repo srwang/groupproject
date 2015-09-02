@@ -13,10 +13,18 @@ class UsersController < ApplicationController
 				Visit.create({user_id:session[:user_id], restaurant_id:params[:restaurant_id]})
 				session[:in_line] = true
 			end
-			@visit = Temp.where(user_id:session[:user_id])[0]
+			tempArr = Temp.all
 
-			puts "~~~~~~~~~~~~~~~~~~~~"
-			puts @visit
+			
+			tempArr.each do |temp|
+				if temp.user_id == session[:user_id]
+					@visit = temp
+					@ticket_num = tempArr.index(temp) + 1
+					puts "~~~~~~~~~~~~~~~~~~~~"
+					puts @visit
+				end
+			end
+
 
 			respond_to do |format|
 				format.html

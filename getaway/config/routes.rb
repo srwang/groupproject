@@ -12,12 +12,10 @@ Rails.application.routes.draw do
       post '/login' => 'sessions#create'
       delete '/login' => 'sessions#destroy'
       delete '/queues' => 'queues#destroy'
-<<<<<<< HEAD
-
       post '/restaurants/:restaurant_id/users/orders' => 'users#orders'
-=======
+
       get '/restaurants/refresh_part' => 'restaurants/refresh_part'
->>>>>>> 99e83bfb8b0aa61e42f39961b7b2277b6f67c8c4
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
