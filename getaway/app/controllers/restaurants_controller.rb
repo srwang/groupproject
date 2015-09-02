@@ -25,4 +25,8 @@ class RestaurantsController < ApplicationController
 		
 	end
 
+	def refresh_part
+		render :partial => 'restaurants/queue'
+	end
+
 end

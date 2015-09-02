@@ -1,6 +1,10 @@
 var orderString = "";
 
-$("#ticket").click(function(){
+
+$(document).ready(function() {
+
+
+$("#ticket").on('click',function(){
 	console.log("clicked")
 	$('#content').html("<%= j (render 'ticket') %>");	
 	$(".customer-ticket a").css("color","#cd7971");
@@ -10,7 +14,7 @@ $("#ticket").click(function(){
 })
 
 
-$("#order").click(function(){
+$("#order").on('click',function(){
 	$('#content').html("<%= j (render 'order') %>");	
 	$(".customer-order a").css("color","#cd7971");
 	$(".customer-order").css('border-bottom', 'solid 2px #cd7971');
@@ -31,3 +35,5 @@ $('.submit').click(function(){
 // SIDE BAR -- LICENSE FROM JQUERY
 
 
+
+})
