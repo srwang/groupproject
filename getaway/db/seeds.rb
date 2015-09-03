@@ -13,10 +13,6 @@ User.create({username: "Ramen", name:"Sharon", password:"abcd", account_type:"cu
 User.create({username: "Paresh29", name:"Paresh", password:"1234",account_type:"customer"})
 User.create({username: "soulmecca", name:"Danny", password:"asdf",account_type:"admin"})
 
-Order.create({restaurant_id: 1, user_id: 1, order: "ShackBurger", visit_id:1})
-Order.create({restaurant_id: 1, user_id: 2, order: "ShackStack", visit_id:2})
-Order.create({restaurant_id: 1, user_id: 3, order: "SmokeShack", visit_id:3})
-
 MenuItem.create({name: "ShackBurger", price: 5.19, restaurant_id: 1})
 MenuItem.create({name: "ShackStack", price: 9.49, restaurant_id: 1})
 MenuItem.create({name: "SmokeShack", price: 5.19, restaurant_id: 1})
@@ -51,6 +47,7 @@ Temp.create({user_id:3, restaurant_id:1, menu: "SmokeShack"})
 Temp.create({user_id:1, restaurant_id:1, menu: "ShackBurger"})
 Temp.create({user_id:2, restaurant_id:1, menu: "ShackStack"})
 Temp.create({user_id:3, restaurant_id:1, menu: "SmokeShack"})
+
 
 
 

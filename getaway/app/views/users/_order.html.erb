@@ -1,0 +1,13 @@
+<div class='customer-ticket-content'>
+	<h1>Menu</h1>
+	<tbody>
+		<tr>
+		<form action="/restaurants/<%=@restaurant.id%>/users/new" method="get">
+			<%@menu_items.each do |item|%>
+				<input type="checkbox" name="orders[]" value="<%=item.name%>">$<%=item.price%> <%=item.name%> <br>
+			<%end%>
+			<button class="submit">Order</button>
+		</form>
+		</tr>
+	</tbody>
+</div>

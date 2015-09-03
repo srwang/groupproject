@@ -1,3 +1,53 @@
+// This is a manifest file that'll be compiled into application.js, which will include all the files
+// listed below.
+//
+// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
+// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
+//
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// compiled file.
+//
+// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
+// about supported directives.
+//
+//= require jquery
+//= require jquery_ujs
+//= require turbolinks
+//= require_tree .
+
+var orderString = "";
+
+
+
+$("#ticket").on('click',function(){
+	console.log("clicked")
+	$('#content').html("<%= j (render 'ticket') %>");	
+	$(".customer-ticket a").css("color","#cd7971");
+	$(".customer-ticket").css('border-bottom', 'solid 2px #cd7971');
+	$(".customer-order a").css("color","#C0C0C0");
+	$(".customer-order").css('border-bottom', 'solid 2px #C0C0C0');
+})
+
+
+$("#order").on('click',function(){
+	$('#content').html("<%= j (render 'order') %>");	
+	$(".customer-order a").css("color","#cd7971");
+	$(".customer-order").css('border-bottom', 'solid 2px #cd7971');
+	$(".customer-ticket a").css("color","#C0C0C0");
+	$(".customer-ticket").css('border-bottom', 'solid 2px #C0C0C0');
+})
+
+$('.submit').click(function(){
+	var client = new WebSocket("ws://localhost:2000/");
+//     var order = $(this).parent().find('.order').val();
+    // var res_id = $(this).parent().find('#order_restaurant_id').val();
+    client.addEventListener("open", function(val){
+        client.send("You have an order from " + readCookie('user_name') + " admin id: " + readCookie('admin_id'))
+    });
+})
+
+// restaurant
+
   
 $("#queue").off().on('click',function(event){
 
@@ -37,34 +87,6 @@ $('#menu').off().on('click',function(event){
 	
 })
 
-
-$('document').off().on('click', '#next', function(){
-
-	thisId = this.value
-
-	var $secondRow =  $("#queue-table tr").eq(1);
-	//AJAX delete request
-		$.ajax({
-	    url: '/queues',
-	    type: 'POST',
-	    data: {'_method': 'delete'},
-	    success: function(result) {
-				$('#content').html("<%= j (render 'queue') %>");	
-				$secondRow.css("background-color","#99EB99");
-	         $secondRow.fadeOut(300,function() {
-				$secondRow.remove();
-				});
-	    }
-	});
-
-	var client = new WebSocket("ws://localhost:2000/");
-
-	client.addEventListener('open', function(){
-		client.send(thisId)	
-	})
-
-});
-
 $('#next').click(function(){
 	alert("hello!")
 	thisId = this.value
@@ -78,7 +100,6 @@ $('#next').click(function(){
 
 })
 
-
 $('document').off().on('click', '#next', function(){
 
 	
@@ -100,6 +121,11 @@ $('document').off().on('click', '#next', function(){
 
 	
 });
+
+
+
+
+
 
 
 
