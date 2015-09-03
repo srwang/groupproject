@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>StreamLine</title>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+
+</head>
+<body class="restaurant-page">
+	<div class ="pure-g">
+		<!-- Navigation Bar -->
+		<div class = "pure-u-1">
+			<div class="nav-bar-container">
+				<div class="pure-u-7-24">
+					<div class="nav-bar-logo">
+
+					</div>
+				</div>
+				<div class="pure-u-15-24">
+					<div class="nav-bar-option">
+
+					</div>
+				</div>
+				<div class="pure-u-1-24">
+					<div class="nav-bar-logout">
+						<%= link_to 'LOGOUT', '/login', method: :delete%>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Restaurant Banner -->
+
+		<div class="pure-u-1">
+			<div class="restaurant-banner">
+				Welcome, <%= @restaurant.name %>
+			</div>
+		</div>
+
+
+		<!-- Restaurant Controller -->
+		<div class="pure-u-1">
+			<div class="restaurant-menu-bar">
+				<div class="pure-u-3-24">
+					<div class="restaurant-queue" id="queue">
+						<%= link_to 'Queue', '/restaurants/1', remote: true %>
+					</div>
+				</div>
+				<div class="pure-u-3-24">
+					<div class="restaurant-map" id="map">
+						<%= link_to 'Map', '/restaurants/1', remote: true %>
+					</div>
+				</div>
+				<div class="pure-u-3-24">
+					<div class="restaurant-menu" id="menu">
+						<%= link_to 'Menu', '/restaurants/1', remote: true %>
+					</div>
+				</div>
+			</div>
+		</div>
+		<%= render 'order'%>
+		<!-- Restaurant -->
+		<div class="pure-u-1" >
+			<div class="controller-content" id="content">	
+				<%= render 'queue' %>
+			</div>
+		</div>
+
+
+
+
+
+
+
+	</div>
+</body>
+</html>
+

@@ -1,0 +1,32 @@
+	<div class="restaurant-content-header">
+		Menu
+	</div>
+	<div class="restaurant-menu-logo">
+	</div>
+	<div class="pure-u-1">
+		<div class="add-menu-item">
+			<button id="add-item">Add Item</button>
+		</div>
+	</div>
+	<div class="restaurant-menu-content">
+		<table id="menu-table">
+		  <thead>
+		    <tr>
+		      <th>Item</th>
+		      <th>Price</th>
+		      <th>Action</th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		  	<% @restaurant.menu_items.each do |menu_item| %>
+		  	<tr>
+		    <td>#<%=menu_item.name%></td>
+		    <td>$<%=menu_item.price%></td>
+		    <td class="orders"> <a href="javascript:void(0)"><%= image_tag "edit.png", :class => 'glass', :id =>'glass' %></a><a href="javascript:void(0)"><%= image_tag "delete.png", :class => 'glass', :id =>'glass' %></a> </td>
+			</tr>
+			<% end %>
+		  </tbody>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,59 @@
+<!-- MODAL CONTENT GUARD -->
+<div class="pure-u-1">
+  <div id="modal">
+    <div class = "pure-u-1">
+      <div class = "modal-wrapper">
+        <!-- MODAL - CONTENT -->
+        <div class="modal-content">
+          <!-- CLOSE MODAL -->
+           <div class = "pure-u-1">
+                <a href="javascript:void(0)"><div class = "modal-close" id="close-modal">
+                  X 
+                </div></a>
+            </div>
+          <!-- MODAL - HEADER -->
+            <div class="pure-u-1">
+              <div class = "modal-logo">
+                Order List
+              </div>
+            </div>
+
+
+
+           <div class = "pure-u-1">
+            <div class="modal-body">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                  
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <% @restaurant.temps.each do |temp| %>
+                  <tr>
+                  <td><%=temp.menu%></td>
+                  <td><%=temp.user.name%></td>
+                  <td >12</td>
+                  </tr>
+                <% end %>
+                  <tr>
+                    <td>Total Amount:</td>
+                    <td></td>
+                    <td> $5000</td>
+                  </tr>
+
+                
+                </tbody>
+            </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

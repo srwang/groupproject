@@ -1,0 +1,95 @@
+body.user-page{
+	background-color: #D8D8D8;
+}
+
+
+
+.nav-bar-user{
+	line-height: 60px;
+	text-align: right;
+	font-size: 22px;
+	color:white;
+}
+.customer-menu-bar{
+	text-align: center;
+	margin: 0 auto;	
+	margin-top: 30px;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+.customer-ticket{
+
+	margin-right: 30px;
+	border-bottom: 2px solid #cd7971;
+	width: 100%
+}
+
+
+.customer-content-box{
+	margin: 0 auto;
+	margin-top: 10px;
+	width: 95%;
+	border: 1px solid #A0A0A0;
+	background-color: white;
+	height: 500px;
+}
+.customer-order{
+	border-bottom: 2px solid #C0C0C0;
+}
+.customer-ticket a,.customer-order a {
+	font-family: helvetica neue;
+	font-size: 25px;
+	font-weight: lighter;
+}
+
+.customer-ticket a{
+	color: #cd7971;
+}
+.customer-order a{
+	color: #C0C0C0;
+}
+
+.customer-ticket-content{
+	text-align: center;
+
+}
+.nav-bar-option-mobile{
+	background: url(/assets/menu_icon.png) no-repeat right; 
+	background-size: 40px 40px;
+	height:60px;
+	text-align: right;
+	margin-left: 10px;
+}
+
+
+/********************************TICKET CONTENT***********************************/
+
+.ticket-number-header{
+	margin-top: 30px;
+	font-family: helvetica neue;
+	font-size: 35px;
+	margin-bottom: 30px;
+	font-weight: 200;
+}
+.ticket-number-box{
+	border: solid 1px #888888;
+	height: 120px;
+	width: 50%;
+	margin: 0 auto;
+	line-height: 120px;
+	font-size: 40px;
+	border-radius: 10px;
+}
+
+#drop-queue{
+	width: 120px;
+	border: 1px solid #cd7971;
+	background-color: white;
+	color: #cd7971;
+	border-radius: 5px;
+	height: 35px;
+}
+#drop-queue:hover{
+	color:white;
+	background-color: #cd7971;
+}

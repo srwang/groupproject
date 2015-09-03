@@ -1,0 +1,32 @@
+
+<div class="pure-u-1">
+	<div class="restaurant-content-header">
+		Queue
+	</div>
+	<div class="next-button">
+		<button id="next" name = "next" value = "<%=@restaurant.temps.first.user_id %> <%=@restaurant.temps.first.user.name%>"> NEXT </button>
+	</div>
+</div>
+<div class="restaurant-queue-content">
+	<table id="queue-table">
+	  <thead>
+	    <tr>
+	      <th>Ticket</th>
+	      <th>Name</th>
+	      <th>Orders</th>
+	    
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	  	<% @restaurant.temps.each do |temp| %>
+	  	<tr>
+	    <td>#<%=temp.id%></td>
+	    <td><%=temp.user.name%></td>
+	   <td class="orders"> <a href="javascript:void(0)"><button value="<%=temp.user.id%>" id="view">View</button></a></td>
+		</tr>
+		<% end %>
+	  </tbody>
+</table>
+</div>
+

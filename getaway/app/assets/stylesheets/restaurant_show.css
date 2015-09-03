@@ -1,0 +1,278 @@
+
+
+/******************Restaurant Show Page********************/
+
+.nav-bar-container{
+	background-color: #58759d;
+	height: 60px;
+	text-align: left;
+	background-image: -webkit-gradient(linear, left 0%, left 100%, from(#768fb2), to(#58759d));
+  background-image: -webkit-linear-gradient(top, #768fb2, 0%, #58759d, 100%);
+  background-image: -moz-linear-gradient(top, #768fb2 0%, #58759d 100%);
+  background-image: linear-gradient(to bottom, #768fb2 0%, #58759d 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff768fb2', endColorstr='#ff58759d', GradientType=0);
+  box-shadow: 5px 5px 5px #888888;
+}
+
+.pink{
+	background-color: #cd7971;
+	 background-image: -webkit-gradient(linear, left 0%, left 100%, from(#da9d97), to(#cd7971));
+  background-image: -webkit-linear-gradient(top, #da9d97, 0%, #cd7971, 100%);
+  background-image: -moz-linear-gradient(top, #da9d97 0%, #cd7971 100%);
+  background-image: linear-gradient(to bottom, #da9d97 0%, #cd7971 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffda9d97', endColorstr='#ffcd7971', GradientType=0);
+}
+
+.nav-bar-logo{
+	background: url(/assets/streamline_logo.png) no-repeat left; 
+	background-size: 180px 45px;
+	height:60px;
+	margin-left: 15px;
+}
+.nav-bar-option{
+	background: url(/assets/menu_icon.png) no-repeat right; 
+	background-size: 40px 40px;
+	height:60px;
+	text-align: right;
+	margin-left: 30px;
+}
+.nav-bar-logout{
+	line-height: 60px;
+	color: white;
+	font-family: helvetica neue;
+	font-weight: lighter;
+	text-align: right;
+	margin-left: 10px;
+}
+
+.nav-bar-logout a{
+	color:white;
+	text-decoration: none;
+}
+
+
+/***************************Banner************************/
+
+.restaurant-banner{
+	background: url(/assets/banner.jpg) no-repeat center; 
+	height: 100px;
+	position: relative;
+	color: white;
+	text-align: left;
+	line-height: 100px;
+	font-size: 50px;
+	font-weight: lighter;
+	font-family: helvetica neue;
+	padding-left: 20px;
+}
+
+.restaurant-banner-mobile{
+	background: url(/assets/banner.jpg) no-repeat center; 
+	height: 75px;
+	position: relative;
+	color: white;
+	text-align: left;
+	line-height: 75px;
+	font-size: 30px;
+	font-weight: lighter;
+	font-family: helvetica neue;
+	padding-left: 20px;
+}
+
+.restaurant-menu-bar{
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 20px;
+	width: 100%;
+	background-color: white;
+	border-bottom: 1px solid #CCCCCC;
+
+}
+
+.restaurant-menu-bar a{
+	text-decoration: none;
+}
+
+
+.restaurant-queue,.restaurant-map, .restaurant-menu{
+
+	font-family: helvetica neue;
+	font-size: 20px;
+	font-weight: lighter;
+}
+
+.restaurant-queue:hover,.restaurant-map:hover, .restaurant-menu:hover{
+	background-color: #E6E6E6;
+}
+
+#map a, #menu a{
+	color: #C0C0C0  ;
+}
+
+#queue a{
+	color: #58759d;
+}
+
+.restaurant-queue{
+	border-bottom: 2px solid #58759d;
+}
+.restaurant-menu, .restaurant-map{
+	border-bottom: 2px solid #C0C0C0   ;
+}
+
+
+/*****************************Controller Content***************/
+
+.restaurant-queue-content{
+	padding-bottom: 30px;
+}
+.restaurant-queue-content table{
+	margin: 0 auto;
+	margin-top: 30px;
+	text-align: left;
+	border: 1px solid #58759d;
+}
+
+.restaurant-queue-content th{
+
+	font-family: helvetica neue;
+	height: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
+	background-color: #58759d;
+	color:white;
+	font-weight: lighter;
+	width: 150px;
+	letter-spacing: 1px;
+
+}
+
+.restaurant-content-header{
+	text-align: center;
+	margin: 0 auto;
+	font-family: helvetica neue;
+	font-size: 30px;
+	margin-top: 30px;
+	font-weight: 400;
+	letter-spacing: 2px;
+}
+.next-button{
+	margin-top: 30px;
+	text-align: center;
+}
+#next, #add-item{
+	border-radius:20px;
+	background-color: white;
+	width: 120px;
+	border: 1.5px solid #58759d;
+	color: #58759d;
+	height: 35px;
+	outline: none;
+}
+#next a{
+	color:#58759d;
+}
+#next a:hover, #add-item:hover{
+	color:white;
+}
+
+#next:hover, #add-item:hover{
+	color:white;
+	background: #58759d;
+}
+
+
+
+.restaurant-queue-content td{
+	padding-left: 30px;
+	text-align: left;
+	font-family: helvetica neue;
+	height: 50px;
+	border-bottom: 1px solid #888888;
+}
+
+.retaurant-header{
+	text-align: center;
+	margin: 0 auto;
+}
+
+.glass{
+	width:20px;
+	height:20px;
+	text-align: center;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.restaurant-menu-content table{
+	margin: 0 auto;
+	margin-top: 30px;
+	text-align: left;
+	border: 1px solid #58759d;
+}
+
+.restaurant-menu-content th{
+	font-family: helvetica neue;
+	background-color: #58759d;
+	height: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
+	color:white;
+	font-weight: lighter;
+	width: 150px;
+	letter-spacing: 1px;
+}
+.restaurant-menu-content td{
+	padding-left: 30px;
+	text-align: left;
+	font-family: helvetica neue;
+	height: 50px;
+	border-bottom: 1px solid #888888;
+}
+
+.restaurant-menu-logo{
+	background: url(/assets/shake_shack.png) no-repeat center; 
+	background-size: 200px 100px;
+	height: 120px;
+}
+
+.add-menu-item{
+	margin-top: 20px;
+	text-align: center;
+}
+
+#view{
+	border: none;
+	background: white;
+	background-image: url(/assets/glass.png) no-repeat center; 
+	border-radius:10px;
+	background-color: white;
+	width: 100px;
+	border: 1.5px solid #58759d;
+	color: #58759d;
+	height: 30px;
+	outline: none;
+	font-weight: 200;
+}
+
+#view:hover{
+	background-color: #58759d;
+	color: white;
+	font-weight: lighter;
+}
+
+.controller-content{
+	margin: 0 auto;
+	margin-top: 20px;
+	width: 95%;
+	border: 1px solid #CCCCCC;
+	border-radius: 10px;
+
+}
+
+
+
+
+

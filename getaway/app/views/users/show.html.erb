@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>StreamLine</title>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+<!-- 	<link rel="stylesheet" href="jquery.sidr.dark.css"> -->
+
+</head>
+<body class="user-page">
+	<div id="sidr-right">
+	  <!-- Your content -->
+	  <ul>
+	    <li><%= link_to 'LOGOUT', '/login', method: :delete%></li>
+	    <li><a href="#">EDIT PROFILE</a></li>
+	  </ul>
+	</div>
+	<div class ="pure-g">
+		<!-- Navigation Bar -->
+		<div class = "pure-u-1">
+			<div class="nav-bar-container pink">
+				<div class="pure-u-13-24">
+					<div class="nav-bar-logo">
+
+					</div>
+				</div>
+				<div class="pure-u-3-24">
+					<div class="nav-bar-user">
+						<%= @user.name %>
+					</div>
+				</div>
+				<div class="pure-u-6-24">
+					<a id="right-menu" href="#right-menu">
+						<div class="nav-bar-option-mobile">
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- Side Menu -->
+		<script>
+			$(document).ready(function() {
+			    $('#right-menu').sidr({
+			      name: 'sidr-right',
+			      side: 'right'
+			    });
+			});
+		</script>
+
+		<!-- Restaurant Banner -->
+
+		<div class="pure-u-1">
+			<div class="restaurant-banner-mobile">
+				<%= @restaurant.name %>
+			</div>
+		</div>
+
+		<div class="customer-content-box">
+			<!-- User controller-->
+			<div class="pure-u-1">
+				<div class="customer-menu-bar">
+					<div class="pure-u-6-24">
+						<div class="customer-ticket" id="ticket">
+							<%= link_to 'Ticket', "/restaurants/#{@restaurant.id}/users/#{@user.id}", remote: true %>
+						</div>
+					</div>
+					<div class="pure-u-6-24">
+						<div class="customer-order" id="order">
+							<%= link_to 'Order', "/restaurants/#{@restaurant.id}/users/#{@user.id}", remote: true %>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- User -->
+			<div class="pure-u-1" >
+				<div class="controller-content" id="content">
+					<%= render 'ticket' %>
+			</div>
+		</div>
+
+		<script src="javascripts/sidr/jquery.sidr.min.js"></script>
+
+	</div>
+</body>
+</html>
